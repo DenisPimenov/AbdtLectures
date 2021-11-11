@@ -4,6 +4,8 @@ using Practice2.Models;
 
 namespace Practice2.Controllers
 {
+    record ApiError(int Code, string Message);
+
     [ApiController]
     [Route("users")]
     public class UserController : ControllerBase
@@ -14,6 +16,8 @@ namespace Practice2.Controllers
         };
 
         [HttpGet("{id:long}")]
+        [ProducesResponseType(typeof(User), 200)]
+        [ProducesResponseType(typeof(ApiError), 404)]
         public ActionResult<User> Get(long id)
         {
             if (Users.ContainsKey(id))
@@ -21,7 +25,7 @@ namespace Practice2.Controllers
                 return Ok(Users[id]);
             }
 
-            return NotFound();
+            return NotFound(new ApiError(1, "User not found"));
         }
     }
 }
