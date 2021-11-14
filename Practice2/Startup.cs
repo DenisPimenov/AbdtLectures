@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using Practice2.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace Practice2
 {
@@ -42,6 +45,8 @@ namespace Practice2
                     { key, new List<string>() }
                 };
                 c.AddSecurityRequirement(requirement);
+
+                c.SchemaFilter<EnumSchemaFilter>();
             });
         }
 
@@ -62,6 +67,21 @@ namespace Practice2
                 await func();
             });
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+        }
+    }
+
+
+    internal class EnumSchemaFilter : ISchemaFilter
+    {
+        public void Apply(OpenApiSchema schema, SchemaFilterContext context)
+        {
+            if (!context.Type.IsEnum)
+                return;
+
+            var desc = Enum.GetNames(context.Type)
+                .Aggregate("", (acc, c) => acc + $"{Convert.ToInt64(Enum.Parse(context.Type, c))} - {c} ");
+
+            schema.Description = $"{schema.Description} : {desc}";
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Practice2.Models;
 
@@ -33,6 +34,35 @@ namespace Practice2.Controllers
             }
 
             return NotFound(new ApiError(1, "User not found"));
+        }
+
+        /// <summary>
+        /// Get users by filter
+        /// </summary>
+        /// <response code="200">Users retrieved</response>
+        /// <response code="500">Oops! Can't lookup your users right now</response>
+        /// <returns></returns>
+        [HttpGet("")]
+        [ProducesResponseType(typeof(IEnumerable<User>), 200)]
+        public ActionResult<IEnumerable<User>> Get([FromQuery] UserFilterRequest filter)
+        {
+            var query = Users.Values.AsEnumerable();
+            if (filter.Ids.Any())
+            {
+                query = query.Where(u => filter.Ids.Contains(u.Id));
+            }
+
+            if (filter.Name?.Length > 0)
+            {
+                query = query.Where(u => u.Name.StartsWith(filter.Name));
+            }
+
+            if (filter.Roles.Any())
+            {
+                query = query.Where(u => filter.Roles.Contains(u.Role));
+            }
+
+            return Ok(query);
         }
 
         /// <summary>
@@ -75,4 +105,25 @@ namespace Practice2.Controllers
             return Ok();
         }
     }
+}
+
+/// <summary>
+/// User filter
+/// </summary>
+public class UserFilterRequest
+{
+    /// <summary>
+    /// User ids
+    /// </summary>
+    public long[] Ids { get; set; } = Array.Empty<long>();
+
+    /// <summary>
+    /// Users name like startWith
+    /// </summary>
+    public string? Name { get; set; }
+
+    /// <summary>
+    /// User ids
+    /// </summary>
+    public Role[] Roles { get; set; } = Array.Empty<Role>();
 }
