@@ -55,6 +55,7 @@ namespace Practice2
             app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI();
+            app.UseReDoc(c => { c.RoutePrefix = "docs"; });
             app.Use(async (context, func) =>
             {
                 if (!context.Request.Headers.TryGetValue("API-KEY", out var key) || !key.Equals("secret-api-key"))
