@@ -1,0 +1,12 @@
+.dockerignore
+.env
+.git
+.gitignore
+.vs
+.vscode
+docker-compose*.yml
+**/bin/
+**/obj/
+**/appsettings.local.json
+packages/
+**/node_modules/%

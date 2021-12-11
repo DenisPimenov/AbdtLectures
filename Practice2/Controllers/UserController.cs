@@ -105,25 +105,25 @@ namespace Practice2.Controllers
             return Ok();
         }
     }
-}
-
-/// <summary>
-/// User filter
-/// </summary>
-public class UserFilterRequest
-{
-    /// <summary>
-    /// User ids
-    /// </summary>
-    public long[] Ids { get; set; } = Array.Empty<long>();
 
     /// <summary>
-    /// Users name like startWith
+    /// User filter
     /// </summary>
-    public string? Name { get; set; }
+    public class UserFilterRequest
+    {
+        /// <summary>
+        /// User ids
+        /// </summary>
+        public long[] Ids { get; set; } = Array.Empty<long>();
 
-    /// <summary>
-    /// User ids
-    /// </summary>
-    public Role[] Roles { get; set; } = Array.Empty<Role>();
+        /// <summary>
+        /// Users name like startWith
+        /// </summary>
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// User ids
+        /// </summary>
+        public Role[] Roles { get; set; } = Array.Empty<Role>();
+    }
 }

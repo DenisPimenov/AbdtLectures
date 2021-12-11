@@ -1,0 +1,86 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>9</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyNetQ" Version="6.3.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\web.config" />
+    <_ContentIncludedByDefault Remove="publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.deps.json" />
+    <_ContentIncludedByDefault Remove="publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\publish\Practice5.CardService.runtimeconfig.json" />
+  </ItemGroup>
+
+</Project>

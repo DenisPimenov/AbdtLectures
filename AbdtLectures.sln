@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5.ApiGateway", "Practice5.ApiGateway\Practice5.ApiGateway.csproj", "{EE593487-A960-4BCA-B3C0-5A96601A0D04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{DD98BC9C-F001-4778-9287-C79E8ADB8233}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice2", "Practice2\Practice2.csproj", "{D3E47E0F-D4D5-4021-BD13-2687CC5F0981}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "P2", "P2", "{875851C3-0D0D-43E8-987F-6EB558AA31CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "P5", "P5", "{A9213FD9-212B-4E04-8B85-B7D12741E8E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Practice5.CardService", "Practice5.CardService\Practice5.CardService.csproj", "{14758683-3591-4037-AAE5-228762359539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sln-items", "sln-items", "{E786C773-BC8F-41D5-A07F-D55139B5555B}"
+ProjectSection(SolutionItems) = preProject
+	Dockerfile = Dockerfile
+	docker-compose.yml = docker-compose.yml
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE593487-A960-4BCA-B3C0-5A96601A0D04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE593487-A960-4BCA-B3C0-5A96601A0D04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE593487-A960-4BCA-B3C0-5A96601A0D04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE593487-A960-4BCA-B3C0-5A96601A0D04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD98BC9C-F001-4778-9287-C79E8ADB8233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD98BC9C-F001-4778-9287-C79E8ADB8233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD98BC9C-F001-4778-9287-C79E8ADB8233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD98BC9C-F001-4778-9287-C79E8ADB8233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E47E0F-D4D5-4021-BD13-2687CC5F0981}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E47E0F-D4D5-4021-BD13-2687CC5F0981}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E47E0F-D4D5-4021-BD13-2687CC5F0981}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E47E0F-D4D5-4021-BD13-2687CC5F0981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14758683-3591-4037-AAE5-228762359539}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14758683-3591-4037-AAE5-228762359539}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14758683-3591-4037-AAE5-228762359539}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14758683-3591-4037-AAE5-228762359539}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D3E47E0F-D4D5-4021-BD13-2687CC5F0981} = {875851C3-0D0D-43E8-987F-6EB558AA31CB}
+		{EE593487-A960-4BCA-B3C0-5A96601A0D04} = {A9213FD9-212B-4E04-8B85-B7D12741E8E1}
+		{DD98BC9C-F001-4778-9287-C79E8ADB8233} = {A9213FD9-212B-4E04-8B85-B7D12741E8E1}
+		{14758683-3591-4037-AAE5-228762359539} = {A9213FD9-212B-4E04-8B85-B7D12741E8E1}
+	EndGlobalSection
+EndGlobal

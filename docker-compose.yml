@@ -1,0 +1,48 @@
+version: "3.9"
+
+services:
+
+  api:
+    build:
+      context: .
+      target: gtw
+    ports:
+      - "5000:5000"
+    environment:
+      - "Redis=redis"
+      - "Rabbit=rabbit"
+      - "CardApi=http://card:5000"
+    links:
+      - card
+      - redis
+      - rabbit
+  card:
+    build:
+      context: .
+      target: card
+    ports:
+      - "5001:5000"
+    environment:
+      - "Postgres=User ID=postgres;Password=admin;Host=postgres;Port=5432;Database=mydb;"
+      - "Rabbit=rabbit"
+    links:
+      - rabbit
+      - postgres
+  redis:
+    image: redis:6.2.6-alpine
+    ports:
+      - "6379:6379"
+    links:
+      - rabbit
+  rabbit:
+    image: rabbitmq:3.9-management-alpine
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  postgres:
+    image: postgres:13-alpine
+    ports:
+      - "5435:5432"
+    environment:
+      - "POSTGRES_PASSWORD=admin"
+      - "POSTGRES_DB=mydb"
