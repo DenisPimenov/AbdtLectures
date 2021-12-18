@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Practice5.ApiGateway.Controllers;
+using Practice5.CardService.Contracts;
 
 namespace Practice5.ApiGateway.Apis
 {
@@ -20,8 +22,9 @@ namespace Practice5.ApiGateway.Apis
 
         public async Task<IEnumerable<CardModel>> GetPartnerCards(long userId, string partner)
         {
-            var cards = await _client.GetFromJsonAsync<IEnumerable<CardModel>>($"/card?userId={userId}&tags={partner}");
-            return cards ?? Array.Empty<CardModel>();
+            var cards = await _client.GetFromJsonAsync<IEnumerable<CardResponseSimple>>(
+                $"/card?userId={userId}&tags={partner}");
+            return cards?.Select(c=> new CardModel(c.SafePan,c.Balance)) ?? Array.Empty<CardModel>();
         }
     }
 }

@@ -1,12 +1,11 @@
 using System.Net;
-using System.Reflection;
-using EasyNetQ.AutoSubscribe;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MassTransit;
 using Practice5.CardService.Consumers;
+using Shared;
 
 namespace Practice5.CardService
 {
@@ -23,16 +22,22 @@ namespace Practice5.CardService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IssueCardConsumer>();
-            services.AddDbContext<CardContext>(builder => builder.UseNpgsql(_configuration["Postgres"]));
+            services.AddDbContext<CardContext>(builder =>
+            {
+                var connection = _configuration["Postgres"] ??
+                                 "User ID=postgres;Password=admin;Host=localhost;Port=5432;Database=mydb;";
+                builder.UseNpgsql(connection);
+            });
 
             services.AddControllers();
+            services.AddScoped<LogContextMiddleware>();
 
             services.AddMassTransit(x =>
             {
                 x.AddConsumer<IssueCardConsumer>();
                 x.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host(Dns.GetHostAddresses(_configuration["Rabbit"])[0].ToString());
+                    cfg.Host(Dns.GetHostAddresses(_configuration["Rabbit"] ?? "localhost")[0].ToString());
                     cfg.ConfigureEndpoints(context);
                 });
             });
@@ -43,6 +48,7 @@ namespace Practice5.CardService
         {
             app.ApplicationServices.GetRequiredService<CardContext>().Database.Migrate();
 
+            app.UseMiddleware<LogContextMiddleware>();
             app.UseRouting();
             app.UseEndpoints(e => e.MapControllers());
         }

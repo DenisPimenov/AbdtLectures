@@ -25,6 +25,13 @@ namespace Practice5.ApiGateway.Controllers
             _cardApiClient = cardApiClient;
         }
 
+        [HttpPost("issue")]
+        public async Task<ActionResult<long>> Issue(long id, string partner)
+        {
+            await _bus.Publish(new IssueSuperCard {OwnerId = id, Partner = partner});
+            return Ok(ApiResult.Ok());
+        }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CardModel>>> Get(long id, string partner)
         {
@@ -34,13 +41,6 @@ namespace Practice5.ApiGateway.Controllers
 
             cards = await _cardApiClient.GetPartnerCards(id, partner);
             return Ok(cards);
-        }
-
-        [HttpPost("issue")]
-        public async Task<ActionResult<long>> Issue(long id, string partner)
-        {
-            await _bus.Publish(new IssueSuperCard {OwnerId = id, Partner = partner});
-            return Ok(ApiResult.Ok());
         }
     }
 }
